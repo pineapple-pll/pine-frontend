@@ -4,7 +4,7 @@ module.exports = {
         rules: [
             {
                 test: /\.(ts|tsx)?$/,
-                loader: "ts-loader",
+                use: ["ts-loader"],
             },
             {
                 test: /\.css?$/,
@@ -21,9 +21,9 @@ module.exports = {
         path: __dirname + "/dist",
     },
     resolve: {
-        extensions: [".ts", ".tsx", ".js",]
+        extensions: [".ts", ".tsx", ".js"]
     },
     devServer: {
-        contentBase: "./dist",
+        contentBase: "./dist"
     }
 }
