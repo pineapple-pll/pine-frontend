@@ -15,5 +15,24 @@
   "bugs": {
     "url": "https://github.com/pineapple-pll/pine-frontend/issues"
   },
-  "homepage": "https://github.com/pineapple-pll/pine-frontend#readme"
+  "homepage": "https://github.com/pineapple-pll/pine-frontend#readme",
+  "dependencies": {
+    "@types/react": "^17.0.4",
+    "@types/react-dom": "^17.0.3",
+    "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
+    "file-loader": "^6.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "css-loader": "^5.2.4",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^9.1.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
 }
