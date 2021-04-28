@@ -7,8 +7,8 @@ module.exports = {
                 use: ["ts-loader"],
             },
             {
-                test: /\.css?$/,
-                use: ["style-loader", "css-loader"]
+                test: /\.(css|scss)?$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
             },
             {
                 test: /\.(jpg|png|svg)?$/,
