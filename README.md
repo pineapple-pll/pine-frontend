@@ -10,4 +10,4 @@
 1. git clone
 2. npm i
 3. npm run build
-4. ./dist 폴더의 index.html과 main.js를 웹서버에서 front 올리는 부분에 설정
+4. ./dist 폴더를 서버쪽에 옮긴후 index.html을 웹서버에서 front 올리는 부분에 설정
