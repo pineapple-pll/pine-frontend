@@ -1,10 +1,12 @@
 import * as React from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import Main from './layout/Main'
 
 function App(){
     return(
-        <div>
-            pineapple-pll
-        </div>
+        <BrowserRouter>
+            <Main/>
+        </BrowserRouter>
     )
 }
 
