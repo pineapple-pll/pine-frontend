@@ -6,11 +6,13 @@ function Home(){
     return(
         <>
             Home Page
-            <div>
-                <button onClick={() => history.push('/login')}>go to Login</button>
-            </div>
-            <div>
-                <button onClick={() => history.push('/signup')}>go to SignUp</button>
+            <div style={{ float: 'right' }}>
+                <span>
+                    <button onClick={() => history.push('/login')}>go to Login</button>
+                </span>
+                <span>
+                    <button onClick={() => history.push('/signup')}>go to SignUp</button>
+                </span>
             </div>
         </>
     )
