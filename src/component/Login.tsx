@@ -21,6 +21,7 @@ function Login(){
                 alert('success login')
             }
         }catch(error){
+            alert('fail login')
             throw error
         }finally{
             setLoading(false)
