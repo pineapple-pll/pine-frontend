@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { useHistory } from 'react-router'
 
 function Login(){
     const [id, setId] = useState<string>('')
     const [pw, setPw] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
+    const history = useHistory()
 
     useEffect(() => {
     },[])
@@ -19,6 +21,7 @@ function Login(){
             })
             if(res.status === 200){
                 alert('success login')
+                history.push('/')
             }
         }catch(error){
             alert('fail login')

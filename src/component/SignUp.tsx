@@ -1,5 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
+import axios from 'axios'
+import { useHistory } from 'react-router'
 
 type SignUpForm = {
     memberId: string,
@@ -30,6 +32,7 @@ function SignUp(){
         email: '',
         password: ''
     })
+    const history = useHistory()
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>){
         let val = {...signUp}
@@ -50,6 +53,21 @@ function SignUp(){
     }
 
     async function handleSignUp(SignUpValue: SignUpForm){
+        try{
+            setLoading(true)
+            const res = await axios.post('http://183.98.69.129/auth/members/signup', {
+                SignUpValue
+            })
+            if(res.status === 200){
+                alert('success signup')
+                history.push('/')
+            }
+        }catch(error){
+            alert('fail signup')
+            throw error
+        }finally{
+            setLoading(false)
+        }
     }
 
     return(
