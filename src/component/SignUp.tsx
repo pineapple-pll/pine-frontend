@@ -55,9 +55,7 @@ function SignUp(){
     async function handleSignUp(SignUpValue: SignUpForm){
         try{
             setLoading(true)
-            const res = await axios.post('http://183.98.69.129/auth/members/signup', {
-                SignUpValue
-            })
+            const res = await axios.post('http://183.98.69.129/auth/members/signup', SignUpValue)
             if(res.status === 200){
                 alert('success signup')
                 history.push('/')
