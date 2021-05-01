@@ -28,7 +28,7 @@ function Login(){
     }
 
     return(
-        <div style={!loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
+        <div style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
             Login Page
             <div>
                 <span>ID: </span>
