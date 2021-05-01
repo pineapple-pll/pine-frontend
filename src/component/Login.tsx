@@ -2,11 +2,14 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router'
+import { useRecoilState } from 'recoil'
+import { authState } from '../recoil/auth'
 
 function Login(){
     const [id, setId] = useState<string>('')
     const [pw, setPw] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
+    const [auth, setAuth] = useRecoilState(authState)
     const history = useHistory()
 
     useEffect(() => {
@@ -21,6 +24,8 @@ function Login(){
             })
             if(res.status === 200){
                 alert('success login')
+                const val = { id: id, token: res.data }
+                setAuth({...val})
                 history.push('/')
             }
         }catch(error){
