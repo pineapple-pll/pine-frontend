@@ -11,15 +11,14 @@ function Login(){
     },[])
 
     async function handleLogin(id : string, password : string){
-        setLoading(true)
         try{
+            setLoading(true)
             const res = await axios.post('http://183.98.69.129/auth/members/signin', {
                 memberId: id,
                 password: password
             })
             if(res.status === 200){
-                alert('로그인성공')
-                console.log(res.data)
+                alert('success login')
             }
         }catch(error){
             throw error
@@ -29,7 +28,7 @@ function Login(){
     }
 
     return(
-        <div style={ loading ? { backgroundColor: 'rgba(0, 0, 0, 0.5)', opacity: 0 } : {}}>
+        <div style={!loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
             Login Page
             <div>
                 <span>ID: </span>
@@ -47,7 +46,7 @@ function Login(){
                     onChange={(e) => setPw(e.target.value)}
                 />
             </div>
-            <button onClick={() => handleLogin(id, pw)}>로그인</button>
+            <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
         </div>
     )
 }
