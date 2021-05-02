@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Noto+Sans+KR:wght@300;500;700&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body * {
+  font-family: 'Montserrat', 'Noto Sans KR';
+  color: #474747;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.tit {
+  font-size: 34px;
+  text-transform: uppercase;
+  margin: 20px 0 24px;
+}
+
+/* login */
+.login {
+  width: 100%;
+  max-width: 360px;
+  margin: 50px auto 0;
+  padding: 18px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 18px;
+}
+
+.login-form label:last-of-type {
+  margin-bottom: 0;
+}
+
+.login-form label input {
+  border: 1px solid #939597;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.login-form label input::-webkit-input-placeholder {
+  color: #939597;
+}
+
+.login-form label input:-ms-input-placeholder {
+  color: #939597;
+}
+
+.login-form label input::-ms-input-placeholder {
+  color: #939597;
+}
+
+.login-form label input::placeholder {
+  color: #939597;
+}
+
+.login-form-btn button {
+  margin: 24px 0;
+  background: #F5dF4D;
+  border: none;
+  font-weight: bold;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.login-form-btn button::-webkit-input-placeholder {
+  color: #939597;
+}
+
+.login-form-btn button:-ms-input-placeholder {
+  color: #939597;
+}
+
+.login-form-btn button::-ms-input-placeholder {
+  color: #939597;
+}
+
+.login-form-btn button::placeholder {
+  color: #939597;
+}
+
+@media screen and (min-width: 700px) {
+  .login-form-btn button {
+    cursor: pointer;
+  }
+}
+
+.login-go-signin p {
+  font-size: 14px;
+  color: #939597;
+}
+
+.login-go-signin p a {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 700px) {
+  .login-go-signin p a:hover {
+    text-decoration: underline;
+  }
+}
+/*# sourceMappingURL=common.css.map */

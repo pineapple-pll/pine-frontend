@@ -1,0 +1,21 @@
+@mixin inputStyle {
+    width:100%;
+    max-width:360px;
+    padding:15px;
+    border-radius:8px;
+    &::placeholder{color:$color-secondary;}
+}
+
+@mixin mq($screen-width) {
+    @if $screen-width == 'medium' {
+        @media screen and (min-width:700px) {
+            @content;
+        }
+    }
+
+    @else if $screen-width == "large" {
+        @media screen and (min-width: 1441px) {
+            
+        }
+    }
+}
