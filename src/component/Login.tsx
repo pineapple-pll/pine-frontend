@@ -36,27 +36,56 @@ function Login(){
         }
     }
 
-    return(
-        <div style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
-            Login Page
-            <div>
-                <span>ID: </span>
-                <input
-                    type="text"
-                    value={id}
-                    onChange={(e) => setId(e.target.value)}
-                />
+    return (
+        <div className="login" style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
+            <h2 className="tit">Login</h2>
+            <div className="login-form">
+                <label>
+                    <input 
+                        type="text"
+                        name="id"
+                        value={id}
+                        onChange={(e) => setId(e.target.value)}
+                        placeholder="Pineapple ID"
+                    />
+                </label>                    
+                <label>
+                    <input 
+                        type="text" 
+                        name="pw"
+                        value={pw}
+                        onChange={(e) => setPw(e.target.value)}
+                        placeholder="암호"
+                    />
+                </label>
+                <p className="login-form-btn">
+                    <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
+                </p>
             </div>
-            <div>
-                <span>PASSWOD: </span>
-                <input
-                    type="text"
-                    value={pw}
-                    onChange={(e) => setPw(e.target.value)}
-                />
-            </div>
-            <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
+            {/* <div className="login-go-signin">
+                <p>Pineapple 회원이 아니라면 <a href="sign-in.html">여기</a>를 클릭해 주세요.</p>
+            </div> */}
         </div>
+        // <div style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
+        //     Login Page
+        //     <div>
+        //         <span>ID: </span>
+        //         <input
+        //             type="text"
+        //             value={id}
+        //             onChange={(e) => setId(e.target.value)}
+        //         />
+        //     </div>
+        //     <div>
+        //         <span>PASSWOD: </span>
+        //         <input
+        //             type="text"
+        //             value={pw}
+        //             onChange={(e) => setPw(e.target.value)}
+        //         />
+        //     </div>
+        //     <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
+        // </div>
     )
 }
 
