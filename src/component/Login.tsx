@@ -4,6 +4,7 @@ import axios from 'axios'
 import { useHistory } from 'react-router'
 import { useRecoilState } from 'recoil'
 import { authState } from '../recoil/auth'
+import Swal from 'sweetalert2'
 
 function Login(){
     const [id, setId] = useState<string>('')
@@ -23,13 +24,24 @@ function Login(){
                 password: password
             })
             if(res.status === 200){
-                alert('success login')
                 const val = { id: id, token: res.data }
                 setAuth({...val})
-                history.push('/')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success Login'
+                }).then(result => {
+                    if(result.isConfirmed){
+                        history.push('/')
+                    }else{
+                        history.push('/')
+                    }
+                })
             }
         }catch(error){
-            alert('fail login')
+            Swal.fire({
+                icon: 'error',
+                title: 'Fail Login'
+            })
             throw error
         }finally{
             setLoading(false)
@@ -37,7 +49,7 @@ function Login(){
     }
 
     return (
-        <div className="login" style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
+        <div className="login">
             <h2 className="tit">Login</h2>
             <div className="login-form">
                 <label>
@@ -62,30 +74,7 @@ function Login(){
                     <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
                 </p>
             </div>
-            {/* <div className="login-go-signin">
-                <p>Pineapple 회원이 아니라면 <a href="sign-in.html">여기</a>를 클릭해 주세요.</p>
-            </div> */}
         </div>
-        // <div style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
-        //     Login Page
-        //     <div>
-        //         <span>ID: </span>
-        //         <input
-        //             type="text"
-        //             value={id}
-        //             onChange={(e) => setId(e.target.value)}
-        //         />
-        //     </div>
-        //     <div>
-        //         <span>PASSWOD: </span>
-        //         <input
-        //             type="text"
-        //             value={pw}
-        //             onChange={(e) => setPw(e.target.value)}
-        //         />
-        //     </div>
-        //     <button onClick={() => handleLogin(id, pw)}>LOGIN</button>
-        // </div>
     )
 }
 

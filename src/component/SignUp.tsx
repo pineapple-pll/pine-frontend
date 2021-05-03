@@ -2,6 +2,7 @@ import * as React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router'
+import Swal from 'sweetalert2'
 
 type SignUpForm = {
     memberId: string,
@@ -57,11 +58,22 @@ function SignUp(){
             setLoading(true)
             const res = await axios.post('http://183.98.69.129/auth/members/signup', SignUpValue)
             if(res.status === 200){
-                alert('success signup')
-                history.push('/')
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success SignUp'
+                }).then(result => {
+                    if(result.isConfirmed){
+                        history.push('/')
+                    }else{
+                        history.push('/')
+                    }
+                })
             }
         }catch(error){
-            alert('fail signup')
+            Swal.fire({
+                icon: 'error',
+                title: 'Fail SignUp'
+            })
             throw error
         }finally{
             setLoading(false)
@@ -69,7 +81,7 @@ function SignUp(){
     }
 
     return(
-        <div style={loading ? {backgroundColor: 'rgb(0, 0, 0, 0.1)'} : {}}>
+        <div>
             Sign up Page
             <div>
                 <span>ID: </span>
