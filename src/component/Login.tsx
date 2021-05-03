@@ -26,6 +26,7 @@ function Login(){
             if(res.status === 200){
                 const val = { id: id, token: res.data }
                 setAuth({...val})
+                localStorage.setItem('authorization', JSON.stringify(val))
                 Swal.fire({
                     icon: 'success',
                     title: 'Success Login'

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import { authState } from '../recoil/auth'
@@ -7,7 +8,15 @@ function Home(){
     const history = useHistory()
     const [auth, setAuth] = useRecoilState(authState)
 
+    useEffect(() => {
+        if(localStorage.getItem('authorization')){
+            let val = localStorage.getItem('authorization')
+            val ? setAuth(JSON.parse(val)) : null
+        }
+    },[])
+
     function LogOut(){
+        localStorage.removeItem('authorization')
         setAuth({id: '', token: ''})
     }
 
