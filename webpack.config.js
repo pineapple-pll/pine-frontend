@@ -24,6 +24,7 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js"]
     },
     devServer: {
-        contentBase: "./dist"
+        historyApiFallback: true,
+        contentBase: "./dist",
     }
 }

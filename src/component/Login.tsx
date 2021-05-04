@@ -18,6 +18,12 @@ function Login(){
 
     async function handleLogin(id : string, password : string){
         try{
+            Swal.fire({
+                title: 'Login.....',
+                didOpen: () => {
+                    Swal.showLoading()
+                }
+            })
             setLoading(true)
             const res = await axios.post('http://183.98.69.129/auth/members/signin', {
                 memberId: id,
