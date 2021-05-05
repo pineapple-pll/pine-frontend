@@ -18,6 +18,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  min-width: 360px;
+}
+
 .tit {
   font-size: 34px;
   text-transform: uppercase;
@@ -34,34 +38,30 @@ a {
 
 .login-form label {
   display: block;
-  margin-bottom: 18px;
 }
 
-.login-form label:last-of-type {
-  margin-bottom: 0;
-}
-
-.login-form label input {
-  border: 1px solid #939597;
+.login-form label input[type=text] {
   width: 100%;
   max-width: 360px;
   padding: 15px;
   border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #939597;
 }
 
-.login-form label input::-webkit-input-placeholder {
+.login-form label input[type=text]::-webkit-input-placeholder {
   color: #939597;
 }
 
-.login-form label input:-ms-input-placeholder {
+.login-form label input[type=text]:-ms-input-placeholder {
   color: #939597;
 }
 
-.login-form label input::-ms-input-placeholder {
+.login-form label input[type=text]::-ms-input-placeholder {
   color: #939597;
 }
 
-.login-form label input::placeholder {
+.login-form label input[type=text]::placeholder {
   color: #939597;
 }
 
@@ -70,10 +70,15 @@ a {
   background: #F5dF4D;
   border: none;
   font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
   width: 100%;
   max-width: 360px;
   padding: 15px;
   border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #939597;
+  border: 1px solid transparent;
 }
 
 .login-form-btn button::-webkit-input-placeholder {
@@ -98,6 +103,11 @@ a {
   }
 }
 
+.login-form-btn button:hover {
+  background: #fff568;
+  border: 1px solid #F5dF4D;
+}
+
 .login-go-signin p {
   font-size: 14px;
   color: #939597;
@@ -111,5 +121,170 @@ a {
   .login-go-signin p a:hover {
     text-decoration: underline;
   }
+}
+
+.sign-in {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.sign-in-form label {
+  display: block;
+}
+
+.sign-in-form label input[type=text] {
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #939597;
+}
+
+.sign-in-form label input[type=text]::-webkit-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form label input[type=text]:-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form label input[type=text]::-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form label input[type=text]::placeholder {
+  color: #939597;
+}
+
+.sign-in-form-btn button {
+  margin: 24px 0;
+  background: #F5dF4D;
+  border: none;
+  font-weight: bold;
+  -webkit-transition: .3s;
+  transition: .3s;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #939597;
+  border: 1px solid transparent;
+}
+
+.sign-in-form-btn button::-webkit-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-btn button:-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-btn button::-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-btn button::placeholder {
+  color: #939597;
+}
+
+@media screen and (min-width: 700px) {
+  .sign-in-form-btn button {
+    cursor: pointer;
+  }
+}
+
+.sign-in-form-btn button:hover {
+  background: #fff568;
+  border: 1px solid #F5dF4D;
+}
+
+.sign-in-form > div > p {
+  position: relative;
+  background: #fff;
+}
+
+.sign-in-form > div > p::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 80%;
+  height: 1px;
+  background: #939597;
+}
+
+.sign-in-form > div:nth-of-type(2) > p::before {
+  width: 60%;
+}
+
+.sign-in-form-info .gender > p {
+  margin: 0 0 5px;
+}
+
+.sign-in-form-info .gender-radio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 10px 0;
+  border: 1px solid #939597;
+  padding: 11px;
+}
+
+.sign-in-form-info .gender-radio::-webkit-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-info .gender-radio:-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-info .gender-radio::-ms-input-placeholder {
+  color: #939597;
+}
+
+.sign-in-form-info .gender-radio::placeholder {
+  color: #939597;
+}
+
+.sign-in-form-info .gender-radio label {
+  cursor: pointer;
+}
+
+.sign-in-form-info .gender-radio label input {
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.sign-in-form-info .gender-radio label:last-child {
+  margin-left: 80px;
+}
+
+.sign-in-form-info .address-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.sign-in-form-info .address-wrap > p {
+  margin: 0;
 }
 /*# sourceMappingURL=common.css.map */
