@@ -91,6 +91,10 @@
                     justify-content: space-between;
                     align-items: center;
                     & > p {margin:0;}
+                    select {
+                        padding:3px;
+                        border-radius:4px;
+                    }
                 }
             }
         }

@@ -287,4 +287,9 @@ body {
 .sign-in-form-info .address-wrap > p {
   margin: 0;
 }
+
+.sign-in-form-info .address-wrap select {
+  padding: 3px;
+  border-radius: 4px;
+}
 /*# sourceMappingURL=common.css.map */
